@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -14,7 +14,6 @@ export default {
           600: '#2563eb',
           700: '#1d4ed8',
         }
-        
       },
     },
   },
