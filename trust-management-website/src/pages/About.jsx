@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">About Trust Welfare</h1>
+      <h1 className="text-4xl font-bold mb-8">About Sri Ekadanta Charitable Trust</h1>
       <div className="card">
         <p className="text-lg mb-4">
           Sri Ekadanta Charitable Trust is a non-profit organization dedicated to empowering communities through various welfare programs.
