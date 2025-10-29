@@ -5,18 +5,18 @@ const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    {
-      id: 1,
-      title: "Welcome  ",
-      description: "Empowering communities through farmer assistance, student sponsorships, and healthcare initiatives.",
-      // buttonText: "Register for Programs",
-      // buttonText2: "Learn More",
-      // buttonColor: "bg-green-500 hover:bg-green-600",
-      // buttonColor2: "bg-white text-blue-600 hover:bg-gray-100",
-      // link: "/register",
-      // link2: "/programs",
-      image: "https://serudsindia.org/wp-content/uploads/2019/11/R_83911-cropped-1-1920x1080.jpg"
-    },
+    // {
+    //   id: 1,
+    //   title: "Welcome  ",
+    //   description: "Empowering communities through farmer assistance, student sponsorships, and healthcare initiatives.",
+    //   // buttonText: "Register for Programs",
+    //   // buttonText2: "Learn More",
+    //   // buttonColor: "bg-green-500 hover:bg-green-600",
+    //   // buttonColor2: "bg-white text-blue-600 hover:bg-gray-100",
+    //   // link: "/register",
+    //   // link2: "/programs",
+    //   image: "https://serudsindia.org/wp-content/uploads/2019/11/R_83911-cropped-1-1920x1080.jpg"
+    // },
     {
       id: 2,
       title: "Supporting Farmers",
