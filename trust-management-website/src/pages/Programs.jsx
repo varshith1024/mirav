@@ -11,7 +11,8 @@ const Programs = () => {
       you_can_contribute_to: [
         "Subsidies for seeds and fertilizers",
         "Equipment and machinery support",
-        "Healthcare and insurance coverage",
+        "Healthcare coverage",
+        "Insurance coverage",
         
       ],
       your_support_benefits: "Farmers with valid agricultural land documents"
@@ -32,7 +33,7 @@ const Programs = () => {
     {
       id: 3,
       title: "Family Welfare Scheme",
-      description: "Help underprivileged families access essential needs and healthcare.",
+      description: "Help underprivileged families access essential needs & healthcare.",
       icon: "🏠",
       you_can_contribute_to: [
         "Food and essentials",
@@ -64,7 +65,7 @@ const Programs = () => {
         Discover our comprehensive welfare programs designed to support farmers, students, and families in need.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-1 gap-9 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-9 mb-12">
         {programs.map((program) => (
           <div key={program.id} className="card">
             <div className="flex items-start mb-4">

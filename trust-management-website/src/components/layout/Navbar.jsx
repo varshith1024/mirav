@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-amber-50 text-stone-600 shadow-lg">
+    <nav className="bg-green-100 text-black shadow-lg">
       <div className="container mx-auto px-4 lg:px-10">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -36,12 +36,12 @@ const Navbar = () => {
             </div>
             
             {/* Big shared S */}
-            <span className="text-6xl lg:text-6xl  text-amber-500 leading-none select-none">S</span>
+            {/* <span className="text-6xl lg:text-6xl  text-amber-800 leading-none select-none">S</span> */}
 
             {/* Two lines beside S */}
             <div className="flex flex-col leading- ml-1 mt-1 ">
-              <span className="text-sm lg:text-[20px] tracking-wide pr-[2px]">RI EKADANTA</span>
-              <span className="text-sm lg:text-[20px] tracking-normal">Charitable Trust</span>
+              <span className="text-sm lg:text-[20px]  pr-[2px] text-amber-800">SRI EKADANTA</span>
+              <span className="text-sm lg:text-[20px] tracking-normal  text-green-700">Charitable Trust</span>
             </div>
           </Link>
 
@@ -49,37 +49,37 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6 lg:space-x-9">
             <Link 
               to="/" 
-              className={`hover:text-yellow-700 transition ${isActive('/') ? 'text-yellow-600 font-semibold' : ''}`}
+              className={`hover:text-green-700 transition ${isActive('/') ? 'text-green-600 font-semibold' : ''}`}
             >
               Home
             </Link>
             <Link 
               to="/programs" 
-              className={`hover:text-yellow-600 transition ${isActive('/programs') ? 'text-yellow-600 font-semibold' : ''}`}
+              className={`hover:text-green-700 transition ${isActive('/programs') ? 'text-green-600 font-semibold' : ''}`}
             >
               Programs
             </Link>
             <Link 
               to="/hospitals" 
-              className={`hover:text-yellow-600 transition ${isActive('/hospitals') ? 'text-yellow-600 font-semibold' : ''}`}
+              className={`hover:text-green-700 transition ${isActive('/hospitals') ? 'text-green-600 font-semibold' : ''}`}
             >
               Hospitals
             </Link>
             <Link 
               to="/gallery" 
-              className={`hover:text-yellow-600 transition ${isActive('/gallery') ? 'text-yellow-600 font-semibold' : ''}`}
+              className={`hover:text-green-700 transition ${isActive('/gallery') ? 'text-green-600 font-semibold' : ''}`}
             >
               Gallery
             </Link>
             <Link 
               to="/news" 
-              className={`hover:text-yellow-600 transition ${isActive('/news') ? 'text-yellow-600 font-semibold' : ''}`}
+              className={`hover:text-green-700 transition ${isActive('/news') ? 'text-green-600 font-semibold' : ''}`}
             >
               News & Events
             </Link>
             <Link 
               to="/about" 
-              className={`hover:text-yellow-600 transition ${isActive('/about') ? 'text-yellow-600 font-semibold' : ''}`}
+              className={`hover:text-green-700 transition ${isActive('/about') ? 'text-green-600 font-semibold' : ''}`}
             >
               About
             </Link>
@@ -107,7 +107,7 @@ const Navbar = () => {
                 </button>
               </div>
             ) : (
-              <div className="text-lg text-stone-500">
+              <div className="text-lg text-stone-700">
                 WELCOME
               </div>
             )}
