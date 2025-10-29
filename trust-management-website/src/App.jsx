@@ -14,12 +14,13 @@ import Login from './pages/Login';
 import Access from './pages/Access';
 import AdminRegister from './pages/AdminRegister';
 import Volunteer from './pages/Volunteer';
-
+import ScrollToTop from './components/layout/ScrollToTop';
 
 function App() {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop/>
         <div className="App min-h-screen flex flex-col bg-gray-50">
           <Navbar />
           <main className="flex-grow">
