@@ -55,9 +55,9 @@ const AdminRegister = () => {
           Register for trust management or hospital partner access
         </p>
 
-        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-          <h3 className="font-semibold text-yellow-800 mb-2">Registration Requirements:</h3>
-          <ul className="text-sm text-yellow-700 space-y-1">
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+          <h3 className="font-semibold text-amber-800 mb-2">Registration Requirements:</h3>
+          <ul className="text-sm text-amber-700 space-y-1">
             <li>• <strong>Admins:</strong> Use registration key: <code>Contact System Administrator</code></li>
             <li>• <strong>Hospital Partners:</strong> Use registration key: <code>Contact System Administrator</code></li>
             <li>• After registration, you can login with your credentials</li>
@@ -224,7 +224,7 @@ const AdminRegister = () => {
         <div className="text-center mt-6">
           <p className="text-gray-600">
             Already have an account?{' '}
-            <a href="/login" className="text-blue-600 hover:text-blue-800 font-semibold">
+            <a href="/login" className="text-amber-800 hover:text-amber-900 font-semibold">
               Login here
             </a>
           </p>

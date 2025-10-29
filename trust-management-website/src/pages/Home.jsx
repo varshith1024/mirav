@@ -84,7 +84,7 @@ const Home = () => {
             </Link> */}
             <Link 
               to="/programs" 
-              className="bg-green-500 text-white hover:bg-green-600 px-8 py-3 rounded-lg text-lg font-semibold transition"
+              className="bg-green-400 text-white hover:bg-green-500 px-8 py-3 rounded-lg text-lg font-semibold transition"
             >
               Learn More
             </Link>

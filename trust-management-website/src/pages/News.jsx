@@ -43,7 +43,7 @@ const News = () => {
               <div className="text-4xl mr-4">{news.image}</div>
               <div>
                 <div className="flex items-center space-x-2 mb-2">
-                  <span className="bg-amber-50 text-stone-600 px-2 py-1 rounded text-sm">
+                  <span className="bg-green-100 text-stone-600 px-2 py-1 rounded text-sm">
                     {news.category}
                   </span>
                   <span className="text-gray-500 text-sm">{news.date}</span>
@@ -59,7 +59,7 @@ const News = () => {
         ))}
       </div>
 
-      <div className="bg-amber-50 rounded-lg p-8 text-center mt-12">
+      <div className="bg-green-100 rounded-lg p-8 text-center mt-12">
         <h2 className="text-2xl font-semibold mb-4">Subscribe to Updates</h2>
         <p className="text-gray-600 mb-6">
           Get the latest news and updates directly in your inbox.

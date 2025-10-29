@@ -9,7 +9,7 @@ const Access = () => {
         <p className="text-gray-600 mb-6">For Trust Administrators & Hospital Partners</p>
         
         <div className="space-y-4 mb-6">
-          <div className="bg-amber-50 p-4 rounded-lg">
+          <div className="bg-green-100 p-4 rounded-lg">
             <h3 className="font-semibold text-stone-800 mb-2">New Users</h3>
             <p className="text-stone-700 text-sm mb-3">Register with your registration key</p>
             <Link 
@@ -20,7 +20,7 @@ const Access = () => {
             </Link>
           </div>
 
-          <div className="bg-amber-50 p-4 rounded-lg">
+          <div className="bg-green-100 p-4 rounded-lg">
             <h3 className="font-semibold text-stone-800 mb-2">Existing Users</h3>
             <p className="text-stone-700 text-sm mb-3">Login with your credentials</p>
             <Link 

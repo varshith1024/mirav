@@ -69,7 +69,7 @@ const Programs = () => {
         {programs.map((program) => (
           <div key={program.id} className="card">
             <div className="flex items-start mb-4">
-              <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
                 <span className="text-2xl">{program.icon}</span>
               </div>
               <div>
@@ -102,14 +102,14 @@ const Programs = () => {
         ))}
       </div>
 
-      <div className="bg-amber-50 rounded-lg p-8 text-center">
+      <div className="bg-green-100 rounded-lg p-8 text-center">
         <h2 className="text-2xl font-semibold mb-4">Ready to Apply?</h2>
         <p className="text-gray-600 mb-6">
           Register today and get the support you need. Our team will guide you through the application process.
         </p>
         <Link 
           to="/register" 
-          className="bg-amber-300 hover:bg-yellow-400 text-stone-600 px-8 py-3 rounded-lg font-semibold text-lg transition"
+          className="bg-green-400 hover:bg-green-400 text-white px-8 py-3 rounded-lg font-semibold text-lg transition"
         >
           Start Registration
         </Link>

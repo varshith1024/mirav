@@ -51,7 +51,7 @@ const Login = () => {
           Login for administrators and hospital partners
         </p>
 
-        <div className="bg-amber-50 border border-stone-500 rounded-lg p-4 mb-6">
+        <div className="bg-green-100 border border-stone-500 rounded-lg p-4 mb-6">
           <h3 className="font-semibold text-stone-800 mb-2">Access Information:</h3>
           <ul className="text-sm text-stone-700 space-y-1">
             <li>• This portal is for authorized personnel only</li>
@@ -119,7 +119,7 @@ const Login = () => {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             New administrator or hospital partner?{' '}
-            <Link to="/admin-register" className="text-stone-600 hover:text-stone-900 font-semibold">
+            <Link to="/admin-register" className="text-amber-800 hover:text-amber-900 font-semibold">
               Register with your key
             </Link>
           </p>

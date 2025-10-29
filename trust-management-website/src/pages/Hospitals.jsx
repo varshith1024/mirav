@@ -35,7 +35,7 @@ const Hospitals = () => {
           <div key={hospital.id} className="card">
             <div className="flex justify-between items-start mb-4">
               <h3 className="text-xl font-semibold text-stone-800">{hospital.name}</h3>
-              <span className="bg-stone-400 text-white px-3 py-1 rounded-full text-sm">
+              <span className="bg-stone-100 text-black px-3 py-1 rounded-full text-sm">
                 {hospital.type}
               </span>
             </div>
@@ -50,7 +50,7 @@ const Hospitals = () => {
                 <span className="font-semibold">Services:</span>
                 <div className="flex flex-wrap gap-2 mt-1">
                   {hospital.services.map((service, index) => (
-                    <span key={index} className="bg-amber-50 text-stone-600 px-2 py-1 rounded text-sm">
+                    <span key={index} className="bg-green-50 text-stone-600 px-2 py-1 rounded text-sm">
                       {service}
                     </span>
                   ))}
@@ -68,8 +68,8 @@ const Hospitals = () => {
                 </div>
               </div>
               
-              <div className="bg-stone-400 p-3 rounded-lg">
-                <span className="font-semibold text-white">Concessions:</span>
+              <div className="bg-stone-200 p-3 rounded-lg">
+                <span className="font-semibold text-black">Concessions:</span>
                 <p className="text-stone-600">{hospital.concessions}</p>
               </div>
             </div>
@@ -81,21 +81,21 @@ const Hospitals = () => {
         <h2 className="text-2xl font-semibold mb-4">How to Avail Hospital Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           <div className="text-center">
-            <div className="w-12 h-12 bg-amber-50 text-stone rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-green-100 text-stone rounded-full flex items-center justify-center mx-auto mb-4">
               1
             </div>
             <h3 className="font-semibold mb-2">Get Registered</h3>
             <p className="text-gray-600">Complete your registration and receive your beneficiary ID</p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-amber-50 text-stone rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-green-100 text-stone rounded-full flex items-center justify-center mx-auto mb-4">
               2
             </div>
             <h3 className="font-semibold mb-2">Visit Hospital</h3>
             <p className="text-gray-600">Visit any partner hospital with your registration ID</p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-amber-50 text-stone rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 bg-green-100 text-stone rounded-full flex items-center justify-center mx-auto mb-4">
               3
             </div>
             <h3 className="font-semibold mb-2">Receive Services</h3>

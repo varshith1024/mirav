@@ -24,7 +24,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center   "
+            className="flex items-center  "
             onClick={closeMenu}
           >
             <div className="w-20 h-20   rounded-full flex items-center justify-center shadow-">
@@ -90,18 +90,18 @@ const Navbar = () => {
             {user ? (
               <div className="flex items-center space-x-4">
                 {user.role === 'admin' && (
-                  <Link to="/admin" className="bg-stone-300 hover:bg-stone-400 px-4 py-2 rounded transition text-sm">
+                  <Link to="/admin" className="bg-stone-400 hover:bg-stone-500 text-white px-4 py-2 rounded transition text-sm">
                     Admin Dashboard
                   </Link>
                 )}
                 {user.role === 'hospital' && (
-                  <Link to="/hospital-portal" className="bg-stone-300 hover:bg-stone-400 px-4 py-2 rounded transition text-sm">
+                  <Link to="/hospital-portal" className="bg-stone-400 hover:bg-stone-500 text-white px-4 py-2 rounded transition text-sm">
                     Hospital Portal
                   </Link>
                 )}
                 <button 
                   onClick={logout}
-                  className="bg-amber-100 hover:bg-amber-200 px-4 py-2 rounded transition text-sm"
+                  className="bg-green-200 hover:bg-green-300 px-4 py-2 rounded transition text-sm"
                 >
                   Logout
                 </button>
@@ -116,7 +116,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-md text-stone-600 hover:bg-amber-100 transition"
+            className="md:hidden p-2 rounded-md text-stone-600 hover:bg-green-100 transition"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,47 +131,47 @@ const Navbar = () => {
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-amber-100 border-t border-amber-200 py-4">
+          <div className="md:hidden bg-green-100 border-t border-green-200 py-4">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col space-y-3 px-4">
               <Link 
                 to="/" 
-                className={`py-3 px-4 rounded transition ${isActive('/') ? 'bg-amber-200 text-yellow-700 font-semibold' : 'hover:bg-amber-200'}`}
+                className={`py-3 px-4 rounded transition ${isActive('/') ? 'bg-green-200 text-green-700 font-semibold' : 'hover:bg-green-200'}`}
                 onClick={closeMenu}
               >
                 Home
               </Link>
               <Link 
                 to="/programs" 
-                className={`py-3 px-4 rounded transition ${isActive('/programs') ? 'bg-amber-200 text-yellow-700 font-semibold' : 'hover:bg-amber-200'}`}
+                className={`py-3 px-4 rounded transition ${isActive('/programs') ? 'bg-green-200 text-green-700 font-semibold' : 'hover:bg-green-200'}`}
                 onClick={closeMenu}
               >
                 Programs
               </Link>
               <Link 
                 to="/hospitals" 
-                className={`py-3 px-4 rounded transition ${isActive('/hospitals') ? 'bg-amber-200 text-yellow-700 font-semibold' : 'hover:bg-amber-200'}`}
+                className={`py-3 px-4 rounded transition ${isActive('/hospitals') ? 'bg-green-200 text-green-700 font-semibold' : 'hover:bg-green-200'}`}
                 onClick={closeMenu}
               >
                 Hospitals
               </Link>
               <Link 
                 to="/gallery" 
-                className={`py-3 px-4 rounded transition ${isActive('/gallery') ? 'bg-amber-200 text-yellow-700 font-semibold' : 'hover:bg-amber-200'}`}
+                className={`py-3 px-4 rounded transition ${isActive('/gallery') ? 'bg-green-200 text-green-700 font-semibold' : 'hover:bg-green-200'}`}
                 onClick={closeMenu}
               >
                 Gallery
               </Link>
               <Link 
                 to="/news" 
-                className={`py-3 px-4 rounded transition ${isActive('/news') ? 'bg-amber-200 text-yellow-700 font-semibold' : 'hover:bg-amber-200'}`}
+                className={`py-3 px-4 rounded transition ${isActive('/news') ? 'bg-green-200 text-green-700 font-semibold' : 'hover:bg-green-200'}`}
                 onClick={closeMenu}
               >
                 News & Events
               </Link>
               <Link 
                 to="/about" 
-                className={`py-3 px-4 rounded transition ${isActive('/about') ? 'bg-amber-200 text-yellow-700 font-semibold' : 'hover:bg-amber-200'}`}
+                className={`py-3 px-4 rounded transition ${isActive('/about') ? 'bg-green-200 text-green-700 font-semibold' : 'hover:bg-green-200'}`}
                 onClick={closeMenu}
               >
                 About
@@ -179,7 +179,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Auth Section */}
-            <div className="mt-4 pt-4 border-t border-amber-300 px-4">
+            <div className="mt-4 pt-4 border-t border-green-300 px-4">
               {user ? (
                 <div className="space-y-3">
                   <div className="text-center text-stone-500">
@@ -189,7 +189,7 @@ const Navbar = () => {
                     {user.role === 'admin' && (
                       <Link 
                         to="/admin" 
-                        className="bg-stone-300 hover:bg-stone-400 py-2 px-3 rounded transition text-center text-sm"
+                        className="bg-stone-500 hover:bg-stone-600 text-white py-2 px-3 rounded transition text-center text-sm"
                         onClick={closeMenu}
                       >
                         Admin Dashboard
@@ -198,7 +198,7 @@ const Navbar = () => {
                     {user.role === 'hospital' && (
                       <Link 
                         to="/hospital-portal" 
-                        className="bg-stone-300 hover:bg-stone-400 py-2 px-3 rounded transition text-center text-sm"
+                        className="bg-stone-500 hover:bg-stone-600 text-white py-2 px-3 rounded transition text-center text-sm"
                         onClick={closeMenu}
                       >
                         Hospital Portal
@@ -209,7 +209,7 @@ const Navbar = () => {
                         logout();
                         closeMenu();
                       }}
-                      className="bg-amber-200 hover:bg-amber-300 py-2 px-3 rounded transition text-sm w-full"
+                      className="bg-green-300 hover:bg-green-400 py-2 px-3 rounded transition text-sm w-full"
                     >
                       Logout
                     </button>
@@ -217,8 +217,8 @@ const Navbar = () => {
                 </div>
               ) : (
                 <div className="text-center">
-                  <div className="text-lg text-stone-500 mb-2">WELCOME</div>
-                  <div className="text-xs text-stone-400">
+                  <div className="text-lg text-stone-800 mb-2">WELCOME</div>
+                  <div className="text-s text-stone-900 ">
                     Sri Ekadanta Charitable Trust
                   </div>
                 </div>
