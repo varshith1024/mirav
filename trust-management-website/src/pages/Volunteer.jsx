@@ -43,31 +43,31 @@ const Volunteer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Volunteer Info */}
           <div className="lg:col-span-1">
-            <div className="bg-orange-50 rounded-lg p-6 sticky top-4">
-              <h3 className="text-xl font-semibold text-orange-800 mb-4">Volunteer Opportunities</h3>
+            <div className="bg-green-50 rounded-lg p-6 sticky top-4">
+              <h3 className="text-xl font-semibold text-amber-800 mb-4">Volunteer Opportunities</h3>
               <div className="space-y-3">
                 <div className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+                  <span className="text-amber-800 mr-2">•</span>
                   <span className="text-gray-700">Field work and distribution</span>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+                  <span className="text-amber-800 mr-2">•</span>
                   <span className="text-gray-700">Teaching and student mentoring</span>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+                  <span className="text-amber-800 mr-2">•</span>
                   <span className="text-gray-700">Medical camp assistance</span>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+                  <span className="text-amber-800 mr-2">•</span>
                   <span className="text-gray-700">Event organization</span>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+                  <span className="text-amber-800 mr-2">•</span>
                   <span className="text-gray-700">Administrative support</span>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-orange-500 mr-2">•</span>
+                  <span className="text-amber-800 mr-2">•</span>
                   <span className="text-gray-700">Community outreach</span>
                 </div>
               </div>

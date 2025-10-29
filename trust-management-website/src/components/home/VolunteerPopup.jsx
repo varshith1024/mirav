@@ -41,8 +41,8 @@ const VolunteerPopup = () => {
         <div className="p-6">
           {/* Header */}
           <div className="text-center mb-4">
-            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-              <span className="text-2xl text-orange-600">❤️</span>
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl text-green-600">❤️</span>
             </div>
             <h3 className="text-xl font-bold text-gray-800">Become a Volunteer</h3>
             <p className="text-gray-600 text-sm mt-1">
@@ -53,19 +53,19 @@ const VolunteerPopup = () => {
           {/* Volunteer Opportunities */}
           <div className="space-y-2 mb-4">
             <div className="flex items-center text-sm text-gray-700">
-              <span className="w-5 h-5 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mr-2 text-xs">✓</span>
+              <span className="w-5 h-5 bg-green-100 text-orange-600 rounded-full flex items-center justify-center mr-2 text-xs">✓</span>
               Field Work & Distribution
             </div>
             <div className="flex items-center text-sm text-gray-700">
-              <span className="w-5 h-5 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mr-2 text-xs">✓</span>
+              <span className="w-5 h-5 bg-green-100 text-orange-600 rounded-full flex items-center justify-center mr-2 text-xs">✓</span>
               Teaching & Mentoring
             </div>
             <div className="flex items-center text-sm text-gray-700">
-              <span className="w-5 h-5 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mr-2 text-xs">✓</span>
+              <span className="w-5 h-5 bg-green-100 text-orange-600 rounded-full flex items-center justify-center mr-2 text-xs">✓</span>
               Medical Camp Support
             </div>
             <div className="flex items-center text-sm text-gray-700">
-              <span className="w-5 h-5 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mr-2 text-xs">✓</span>
+              <span className="w-5 h-5 bg-green-100 text-orange-600 rounded-full flex items-center justify-center mr-2 text-xs">✓</span>
               Event Organization
             </div>
           </div>
