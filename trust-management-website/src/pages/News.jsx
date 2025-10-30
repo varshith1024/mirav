@@ -70,7 +70,7 @@ const News = () => {
             placeholder="Enter your email"
             className="flex-grow px-4 py-2 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button className="bg-stone-400 hover:bg-stone-500 text-white px-5 py-3 rounded-r-lg font-semibold transition">
+          <button className="bg-stone-400 hover:bg-stone-500 text-white px-2 py-3 rounded-r-lg font-semibold transition">
             Subscribe
           </button>
         </div>

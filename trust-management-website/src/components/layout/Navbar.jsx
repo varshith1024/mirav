@@ -24,29 +24,26 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center  "
+            className="flex items-center"
             onClick={closeMenu}
           >
-            <div className="w-20 h-20   rounded-full flex items-center justify-center shadow-">
+            <div className="w-20 h-20 rounded-full flex items-center justify-center">
               <img 
                 src='/logo.png'
                 alt='Sri Ekadanta Charitable Trust Logo'
-                className='w-18 h-18 lg:w-29 lg:h-29 object-contain'
+                className='w-18 h-18 lg:w-20 lg:h-21 object-contain'
               />
             </div>
             
-            {/* Big shared S */}
-            {/* <span className="text-6xl lg:text-6xl  text-amber-800 leading-none select-none">S</span> */}
-
             {/* Two lines beside S */}
-            <div className="flex flex-col leading- ml-1 mt-1 ">
-              <span className="text-sm lg:text-[20px]  pr-[2px] text-amber-800">SRI EKADANTA</span>
-              <span className="text-sm lg:text-[20px] tracking-normal  text-green-700">Charitable Trust</span>
+            <div className="flex flex-col ml-1 mt-1">
+              <span className="text-sm lg:text-[20px] pr-[2px] text-amber-800">SRI EKADANTA</span>
+              <span className="text-sm lg:text-[20px] tracking-normal text-green-700">Charitable Trust</span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links - Hidden on mobile */}
-          <div className="hidden md:flex space-x-6 lg:space-x-9">
+          {/* Desktop Navigation Links - Hidden on tablet and mobile */}
+          <div className="hidden lg:flex space-x-9">
             <Link 
               to="/" 
               className={`hover:text-green-700 transition ${isActive('/') ? 'text-green-600 font-semibold' : ''}`}
@@ -85,8 +82,8 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Auth Section - Hidden on mobile */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Auth Section - Hidden on tablet and mobile */}
+          <div className="hidden lg:flex items-center space-x-4">
             {user ? (
               <div className="flex items-center space-x-4">
                 {user.role === 'admin' && (
@@ -113,10 +110,10 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile/Tablet menu button - Show on screens smaller than lg (1024px) */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-md text-stone-600 hover:bg-green-100 transition"
+            className="lg:hidden p-2 rounded-md text-stone-600 hover:bg-green-100 transition"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,9 +126,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile/Tablet Navigation Menu - Show on screens smaller than lg (1024px) */}
         {isMenuOpen && (
-          <div className="md:hidden bg-green-100 border-t border-green-200 py-4">
+          <div className="lg:hidden bg-green-100 border-t border-green-200 py-4">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col space-y-3 px-4">
               <Link 
@@ -218,7 +215,7 @@ const Navbar = () => {
               ) : (
                 <div className="text-center">
                   <div className="text-lg text-stone-800 mb-2">WELCOME</div>
-                  <div className="text-s text-stone-900 ">
+                  <div className="text-s text-stone-900">
                     Sri Ekadanta Charitable Trust
                   </div>
                 </div>
