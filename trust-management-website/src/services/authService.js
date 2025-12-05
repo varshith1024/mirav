@@ -1,5 +1,7 @@
 import axios from "axios";
 
+axios.defaults.withCredentials = true;
+
 const API_BASE = "https://mirav-backend.onrender.com/api/auth";
 
 // ✅ Register admin or hospital
