@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { registerAdminOrHospital } from "../services/authService";
 
 const AdminRegister = () => {
   const { register, handleSubmit, formState: { errors }, watch } = useForm();
@@ -10,36 +11,37 @@ const AdminRegister = () => {
 
   const userType = watch('userType');
 
+  // ===========================
+  // ✅ REAL SUBMIT HANDLER
+  // ===========================
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     setSubmitMessage('');
 
-    // Validate registration keywords
-    if (data.userType === 'admin' && data.registrationKey !== 'TRUST_ADMIN_2024') {
-      setSubmitMessage('Invalid admin registration key');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (data.userType === 'hospital' && data.registrationKey !== 'HOSPITAL_PARTNER_2024') {
-      setSubmitMessage('Invalid hospital partner registration key');
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      // Simulate API call for registration
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      setSubmitMessage('Registration successful! You can now login with your credentials.');
-      
-      // Redirect to login after successful registration
-      setTimeout(() => {
-        navigate('/login');
-      }, 3000);
-      
+      // ✅ Send data to backend API
+      const response = await registerAdminOrHospital({
+        full_name: data.fullName,
+        email: data.email,
+        password: data.password,
+        confirmPassword: data.confirmPassword,
+        userType: data.userType,
+        registrationKey: data.registrationKey,
+        hospitalName: data.hospitalName || null
+      });
+
+      if (response.error) {
+        setSubmitMessage(`❌ ${response.error}`);
+      } else {
+        setSubmitMessage('✅ Registration successful! Redirecting to login...');
+        
+        setTimeout(() => {
+          navigate('/login');
+        }, 2000);
+      }
+
     } catch (error) {
-      setSubmitMessage('Registration failed. Please try again.');
+      setSubmitMessage('❌ Registration failed. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -58,37 +60,37 @@ const AdminRegister = () => {
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
           <h3 className="font-semibold text-amber-800 mb-2">Registration Requirements:</h3>
           <ul className="text-sm text-amber-700 space-y-1">
-            <li>• <strong>Admins:</strong> Use registration key: <code>Contact System Administrator</code></li>
-            <li>• <strong>Hospital Partners:</strong> Use registration key: <code>Contact System Administrator</code></li>
+            <li>• <strong>Admins:</strong> Contact system administrator for key</li>
+            <li>• <strong>Hospital Partners:</strong> Contact system administrator for key</li>
             <li>• After registration, you can login with your credentials</li>
           </ul>
         </div>
 
         {submitMessage && (
           <div className={`p-4 mb-6 rounded ${
-            submitMessage.includes('Invalid') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
+            submitMessage.includes('❌') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
           }`}>
             {submitMessage}
           </div>
         )}
 
+        {/* ✅ FORM */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {/* User Type Selection */}
+
+          {/* User Type */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Select User Type *
             </label>
             <select
               {...register('userType', { required: 'Please select user type' })}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
             >
               <option value="">Select Type</option>
-              <option value="admin">Trust Administrator</option>
-              <option value="hospital">Hospital Partner</option>
+              <option value="Admin">Trust Administrator</option>
+              <option value="Hospital">Hospital Partner</option>
             </select>
-            {errors.userType && (
-              <p className="text-red-500 text-sm mt-1">{errors.userType.message}</p>
-            )}
+            {errors.userType && <p className="text-red-500 text-sm">{errors.userType.message}</p>}
           </div>
 
           {/* Registration Key */}
@@ -99,18 +101,13 @@ const AdminRegister = () => {
             <input
               type="password"
               {...register('registrationKey', { required: 'Registration key is required' })}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md"
               placeholder="Enter registration key"
             />
-            {errors.registrationKey && (
-              <p className="text-red-500 text-sm mt-1">{errors.registrationKey.message}</p>
-            )}
-            <p className="text-sm text-gray-500 mt-1">
-              Contact system administrator for registration keys
-            </p>
+            {errors.registrationKey && <p className="text-red-500 text-sm">{errors.registrationKey.message}</p>}
           </div>
 
-          {/* Personal Information */}
+          {/* Full Name + Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -119,12 +116,10 @@ const AdminRegister = () => {
               <input
                 type="text"
                 {...register('fullName', { required: 'Full name is required' })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 placeholder="Enter your full name"
               />
-              {errors.fullName && (
-                <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>
-              )}
+              {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
             </div>
 
             <div>
@@ -133,41 +128,31 @@ const AdminRegister = () => {
               </label>
               <input
                 type="email"
-                {...register('email', { 
-                  required: 'Email is required',
-                  pattern: {
-                    value: /^\S+@\S+$/i,
-                    message: 'Invalid email address'
-                  }
-                })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                {...register('email', { required: 'Email is required' })}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 placeholder="Enter your email"
               />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-              )}
+              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
             </div>
           </div>
 
-          {/* Organization Info */}
-          {userType === 'hospital' && (
+          {/* Hospital Name (visible only if hospital) */}
+          {userType === 'Hospital' && (
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Hospital Name *
               </label>
               <input
                 type="text"
-                {...register('hospitalName', { required: userType === 'hospital' ? 'Hospital name is required' : false })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                {...register('hospitalName', { required: 'Hospital name is required' })}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 placeholder="Enter hospital name"
               />
-              {errors.hospitalName && (
-                <p className="text-red-500 text-sm mt-1">{errors.hospitalName.message}</p>
-              )}
+              {errors.hospitalName && <p className="text-red-500 text-sm">{errors.hospitalName.message}</p>}
             </div>
           )}
 
-          {/* Password */}
+          {/* Password + Confirm */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -175,19 +160,11 @@ const AdminRegister = () => {
               </label>
               <input
                 type="password"
-                {...register('password', { 
-                  required: 'Password is required',
-                  minLength: {
-                    value: 6,
-                    message: 'Password must be at least 6 characters'
-                  }
-                })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                {...register('password', { required: 'Password is required' })}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 placeholder="Create password"
               />
-              {errors.password && (
-                <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
-              )}
+              {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
             </div>
 
             <div>
@@ -196,16 +173,14 @@ const AdminRegister = () => {
               </label>
               <input
                 type="password"
-                {...register('confirmPassword', { 
+                {...register('confirmPassword', {
                   required: 'Please confirm password',
                   validate: value => value === watch('password') || 'Passwords do not match'
                 })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 placeholder="Confirm password"
               />
-              {errors.confirmPassword && (
-                <p className="text-red-500 text-sm mt-1">{errors.confirmPassword.message}</p>
-              )}
+              {errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword.message}</p>}
             </div>
           </div>
 
@@ -214,7 +189,7 @@ const AdminRegister = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-stone-500 hover:bg-stone-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition disabled:opacity-50"
+              className="bg-stone-500 hover:bg-stone-600 text-white px-8 py-3 rounded-lg"
             >
               {isSubmitting ? 'Registering...' : 'Register Account'}
             </button>
@@ -224,9 +199,7 @@ const AdminRegister = () => {
         <div className="text-center mt-6">
           <p className="text-gray-600">
             Already have an account?{' '}
-            <a href="/login" className="text-amber-800 hover:text-amber-900 font-semibold">
-              Login here
-            </a>
+            <a href="/login" className="text-amber-800 font-semibold">Login here</a>
           </p>
         </div>
       </div>
