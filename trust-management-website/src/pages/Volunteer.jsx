@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:4000";
+const API_BASE_URL = process.env.REACT_APP_API_URL || "https://mirav-backend.onrender.com";
 
 const Volunteer = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
