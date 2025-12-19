@@ -15,7 +15,7 @@ import Access from './pages/Access';
 import AdminRegister from './pages/AdminRegister';
 import Volunteer from './pages/Volunteer';
 import ScrollToTop from './components/layout/ScrollToTop';
-
+import TestVolunteerID from './pages/TestVolunteerID';
 function App() {
   return (
     <AuthProvider>
@@ -36,6 +36,8 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/admin-register" element={<AdminRegister />} /> 
               <Route path="/access" element={<Access />} /> 
+              <Route path="/test-volunteer-id" element={<TestVolunteerID />} />
+
             </Routes>
           </main>
           <Footer />
